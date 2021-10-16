@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Internet_Tech_1.Models.Vacancies>
+@{
+    ViewData["Title"] = "Vacancies";
+}
+
+<body>
+    <h2>Наши вакансии</h2>
+    <div class="card-deck">
+        @foreach (Vacancies item in Model)
+        {
+            <div class="card border-dark mb-5" style="max-width: 20rem;">
+                <div class="card-header">
+                    <h5 class="card-title">@item.Name</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">@item.Description</p>
+                </div>
+                <div class="card-footer">
+                    <p>Зарплата: @item.Salary</p>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Feedback" asp-action="Feedback">Обратная связь</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div>
+        <h2>Контактные данные</h2>
+        <p>Наш E-mail: tortikys@@mail.ru </p>
+        <p>Наш телефон: 8-800-355-35-35</p>
+        <p>Наш адрес:</p>
+    </div>
+
+</body>
+

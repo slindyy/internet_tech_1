@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Internet_Tech_1.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<body>
+    <h2>Наши товары и услуги</h2>
+    <div class="card-deck">
+        @foreach (Product item in Model)
+        {
+            <div class="card border-dark mb-5" style="max-width: 20rem;">
+                <div class="card-header">
+                    <h5 class="card-title">@item.Name</h5>
+                </div>
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBzF5CnAuTPmKhYmYLNW5XbY7KOhvQcUAYHHXgbNri78vz_okot34TGz5bUQyULpKxmKc&usqp=CAU" width="300" height="200" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">@item.Description</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Feedback" asp-action="Feedback">Обратная связь</a>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+
